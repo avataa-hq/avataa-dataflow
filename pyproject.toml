@@ -1,6 +1,6 @@
 [project]
 name = "dataflow"
-version = "3.0.9"
+version = "3.0.11"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -9,36 +9,36 @@ dependencies = [
     "alembic==1.9.1",
     "apache-airflow==2.7.1",
     "asyncpg==0.30.0",
-    "cachetools==6.1.0",
-    "fastapi==0.116.1",
+    "cachetools==6.2.1",
+    "fastapi==0.119.0",
     "ftputil==5.1.0",
     "grpcio==1.64.1",
     "httpx==0.28.1",
-    "icecream==2.1.7",
-    "minio==7.1.17",
+    "icecream==2.1.8",
+    "minio==7.2.18",
     "mysql-connector-python==8.0.33",
     "numpy==1.26.4",
-    "openpyxl==3.0.10",
+    "openpyxl==3.1.5",
     "pandas==1.5.3",
     "paramiko==3.5.1",
     "protobuf==3.20.3",
-    "psycopg2-binary==2.9.10",
-    "pydantic==1.10.22",
+    "psycopg2-binary==2.9.11",
+    "pydantic==1.10.24",
     "pysftp==0.2.9",
-    "requests==2.32.4",
+    "requests==2.32.5",
     "requests-oauthlib==1.3.1",
     "sqlalchemy[asyncio]==1.4.54",
-    "uvicorn==0.35.0",
+    "uvicorn==0.37.0",
 ]
 
 [dependency-groups]
 dev = [
 ]
 lint = [
-    "ruff==0.12.9",
+    "ruff==0.14.0",
 ]
 tests = [
-    "pytest==7.2.1",
+    "pytest==7.4.4",
     "pytest-asyncio==0.20.3",
 ]
 security = [
@@ -48,6 +48,6 @@ migrations = [
     "alembic==1.9.1",
     "asyncpg>=0.30.0",
     "sqlalchemy==1.4.54",
-    "pydantic>=1.10.22",
-    "cryptography==39.0.0",
+    "pydantic>=1.10.24",
+    "cryptography==44.0.1",
 ]

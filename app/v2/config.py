@@ -2,9 +2,9 @@ import os
 
 # DATABASE
 DB_TYPE = os.environ.get("V2_DB_TYPE", "postgresql+asyncpg")
-DB_USER = os.environ.get("V2_DB_USER", "root")
-DB_PASS = os.environ.get("V2_DB_PASS", "root")
-DB_HOST = os.environ.get("V2_DB_HOST", "db")
+DB_USER = os.environ.get("V2_DB_USER", "dataflow_admin")
+DB_PASS = os.environ.get("V2_DB_PASS", None)
+DB_HOST = os.environ.get("V2_DB_HOST", "pgbouncer")
 DB_PORT = os.environ.get("V2_DB_PORT", "5432")
 DB_NAME = os.environ.get("V2_DB_NAME", "dataflow_v2")
 

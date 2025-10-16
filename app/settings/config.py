@@ -6,11 +6,11 @@ PREFIX = f"/api/{TITLE.replace(' ', '_').lower()}"
 
 # KEYCLOAK
 KEYCLOAK_PROTOCOL = os.environ.get("KEYCLOAK_PROTOCOL", "http")
-KEYCLOAK_HOST = os.environ.get("KEYCLOAK_HOST", "http://localhost")
+KEYCLOAK_HOST = os.environ.get("KEYCLOAK_HOST", "keycloak")
 KEYCLOAK_PORT = os.environ.get("KEYCLOAK_PORT", "8080")
-KEYCLOAK_REALM = os.environ.get("KEYCLOAK_REALM", "Avataa")
-KEYCLOAK_CLIENT_ID = os.environ.get("KEYCLOAK_CLIENT_ID")
-KEYCLOAK_CLIENT_SECRET = os.environ.get("KEYCLOAK_CLIENT_SECRET", None)
+KEYCLOAK_REALM = os.environ.get("KEYCLOAK_REALM", "avataa")
+# KEYCLOAK_CLIENT_ID = os.environ.get("KEYCLOAK_CLIENT_ID")
+# KEYCLOAK_CLIENT_SECRET = os.environ.get("KEYCLOAK_CLIENT_SECRET", None)
 
 KEYCLOAK_REDIRECT_PROTOCOL = os.environ.get("KEYCLOAK_REDIRECT_PROTOCOL", None)
 KEYCLOAK_REDIRECT_HOST = os.environ.get("KEYCLOAK_REDIRECT_HOST", None)
@@ -35,7 +35,7 @@ if KEYCLOAK_REDIRECT_PORT:
 KEYCLOAK_TOKEN_URL = f"{KEYCLOAK_REDIRECT_URL}/realms/{KEYCLOAK_REALM}/protocol/openid-connect/token"
 KEYCLOAK_AUTHORIZATION_URL = f"{KEYCLOAK_REDIRECT_URL}/realms/{KEYCLOAK_REALM}/protocol/openid-connect/auth"
 
-SECURITY_TYPE = os.environ.get("SECURITY_TYPE", "DISABLE").upper()
+SECURITY_TYPE = os.environ.get("SECURITY_TYPE", "KEYCLOAK-INFO").upper()
 ADMIN_ROLE = "__admin"
 
 # CACHE
