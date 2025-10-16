@@ -1,0 +1,49 @@
+import os
+
+# DATABASE
+DB_TYPE = os.environ.get("V3_DB_TYPE", "postgresql+asyncpg")
+DB_USER = os.environ.get("V3_DB_USER", "root")
+DB_PASS = os.environ.get("V3_DB_PASS", "root")
+DB_HOST = os.environ.get("V3_DB_HOST", "localhost")
+DB_PORT = os.environ.get("V3_DB_PORT", "5432")
+DB_NAME = os.environ.get("V3_DB_NAME", "dataflow_v3")
+
+DATABASE_URL = f"{DB_TYPE}://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+
+
+# AIRFLOW
+AIRFLOW_PROTOCOL = os.environ.get("AIRFLOW_PROTOCOL", "http")
+AIRFLOW_HOST = os.environ.get("AIRFLOW_HOST", "localhost")
+AIRFLOW_PORT = os.environ.get("AIRFLOW_PORT")
+AIRFLOW_URL = f"{AIRFLOW_PROTOCOL}://{AIRFLOW_HOST}"
+if AIRFLOW_PORT:
+    AIRFLOW_URL += f":{AIRFLOW_PORT}"
+AIRFLOW_API_URL = f"{AIRFLOW_URL}/api/v1"
+AIRFLOW_USER = os.environ.get("AIRFLOW_USER", "airflow")
+AIRFLOW_PASS = os.environ.get("AIRFLOW_PASS", "airflow")
+
+# cryptography.fernet Fernet.generate_key()
+CRYPTO_KEY = os.environ.get(
+    "CRYPTO_KEY", "7RMBdPjt7oQRsxh-wqs1YVVYxBY-1oVVrrOjzV6-h1U="
+)
+
+# MinIO settings
+MINIO_URL = os.environ.get("MINIO_URL", "127.0.0.1:9000")
+MINIO_USER = os.environ.get("MINIO_USER", "MINIO_USER")
+MINIO_PASSWORD = os.environ.get("MINIO_PASSWORD", "MINIO_PASSWORD")
+MINIO_BUCKET = os.environ.get("MINIO_BUCKET", "dataflow")
+MINIO_SECURE = os.environ.get("MINIO_SECURE", "False").upper() in (
+    "TRUE",
+    "Y",
+    "YES",
+    "1",
+)
+
+
+DATAVIEW_MANAGER_HOST = os.environ.get(
+    "DATAVIEW_MANAGER_HOST", "DATAVIEW_MANAGER_HOST"
+)
+DATAVIEW_MANAGER_GRPC_PORT = os.environ.get(
+    "DATAVIEW_MANAGER_GRPC_PORT", "50051"
+)
+DATAVIEW_GRPC_URL = f"{DATAVIEW_MANAGER_HOST}:{DATAVIEW_MANAGER_GRPC_PORT}"

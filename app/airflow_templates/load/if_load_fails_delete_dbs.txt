@@ -1,0 +1,5 @@
+
+    delete_db_tables_if_load_fails = PythonOperator(python_callable=delete_db_tables_if_load_fails,
+    op_kwargs={'create_db_tasks_ids': $create_db_tasks_ids$,
+    'load_data_task_ids': $load_data_task_ids$},
+    task_id='Clear_temporary_data_if_some_task_fails', trigger_rule='none_skipped', provide_context=True)

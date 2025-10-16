@@ -1,0 +1,16 @@
+
+    $manager_name$ = pickle.loads(bytes.fromhex("$pickled_source_instance$"))
+    $manager_name$['con_data'] = decrypt_data($manager_name$['con_data'])
+
+    $manager_name$ = get_source_manager($manager_name$)
+
+    $check_connection_task_name$ = PythonOperator(python_callable=$manager_name$.get_source_data_columns,
+                        task_id='$check_connection_task_id$')
+
+    $create_db_task$ = PythonOperator(python_callable=create_db_name,
+                        task_id='$create_db_task_id$',
+                        op_kwargs={'dag_id': '$dag_id$', 'source_id': '$source_id$'})
+
+    $load_data_task_name$ = PythonOperator(python_callable=$manager_name$.save_source_data_into_database,
+                        task_id='$load_data_task_id$',
+                        op_kwargs={'create_db_task_id': '$create_db_task_id$'}, provide_context=True)

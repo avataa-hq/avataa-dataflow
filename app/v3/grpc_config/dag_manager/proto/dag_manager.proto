@@ -1,0 +1,24 @@
+syntax = "proto3";
+package dag_manager;
+
+
+service DagManager {
+    rpc GetSourceConData (RequestSourceConData) returns (ResponseSourceConData) {}
+    rpc CheckDestination (RequestCheckDestination) returns (ResponseCheckDestination) {}
+}
+
+message RequestSourceConData {
+    repeated int32 sources = 1;
+}
+
+message ResponseSourceConData {
+    map<int32, string> con_data = 1;
+}
+
+message RequestCheckDestination {
+    int32 destination_id = 1;
+    string con_type = 2;
+}
+
+message ResponseCheckDestination {
+}

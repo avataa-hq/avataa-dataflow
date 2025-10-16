@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package airflow_to_dataflow;
+
+
+service AirflowToDataflow {
+    rpc GetSourceConfiguration (RequestGetSourceConfiguration) returns (ResponseGetSourceConfiguration) {}
+    rpc GetDestinationData (RequestGetDestinationData) returns (ResponseGetDestinationData) {}
+}
+
+message RequestGetSourceConfiguration {
+    int32 source_id = 1;
+}
+
+message ResponseGetSourceConfiguration {
+    string source_data = 1;
+}
+
+message RequestGetDestinationData {
+    int32 destination_id = 1;
+}
+
+message ResponseGetDestinationData {
+    string destination_data = 1;
+}

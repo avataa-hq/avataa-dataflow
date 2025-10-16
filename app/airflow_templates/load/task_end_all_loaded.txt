@@ -1,0 +1,1 @@
+    end_load = PythonOperator(python_callable=lambda x: print(x), op_args=['loaded'], task_id='All_data_loaded')

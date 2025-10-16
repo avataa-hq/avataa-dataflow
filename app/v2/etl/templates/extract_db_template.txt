@@ -1,0 +1,26 @@
+from datetime import timedelta
+
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from airflow.utils.dates import days_ago
+from sqlalchemy import create_engine, text
+from sqlalchemy.orm import sessionmaker
+
+
+dag = DAG(
+    dag_id='$dag_id',
+    start_date=days_ago(0, 0, 0, 0),
+    description='$description',
+    default_args={
+        'retries': 5,
+        'retry_delay': timedelta(minutes=5)
+    }
+)
+
+
+def extract_db(url: str, table: str):
+    engine = create_engine(url=url)
+    session_maker = sessionmaker(engine)
+
+    with session_maker() as session:
+        response = session.execute(text(f"""SELECT * FROM {table} LIMIT 10;"""))
