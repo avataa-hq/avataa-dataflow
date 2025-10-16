@@ -1,5 +1,5 @@
 # builder
-FROM harbor.avataa.work/avataa/devops/python:3.11.13-slim-trixie-custom AS builder-image
+FROM avataa/python:3.11.13-slim-trixie AS builder-image
 
 # install requirements
 COPY pyproject.toml .

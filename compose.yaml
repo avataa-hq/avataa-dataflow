@@ -21,7 +21,6 @@ x-restart: &restart
 
 networks:
   avataa-platform:
-    name: avataa-platform
     external: true
 
 services:
