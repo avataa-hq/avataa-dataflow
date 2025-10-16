@@ -53,7 +53,7 @@ V3_DB_USER=<pgbouncer/postgres_dataflow_user>
 - KEYCLOAK_HOST
 - KEYCLOAK_PORT
 - KEYCLOAK_REALM
-- DEBUG - enables debug mode (disabled authorization, enabled CORS for all sources) 
+- DEBUG - enables debug mode (disabled authorization, enabled CORS for all sources)
 
 ## Version 1
 
@@ -87,7 +87,7 @@ V3_DB_USER=<pgbouncer/postgres_dataflow_user>
 
 ### Compose
 
-- `REGISTRY_URL` - Docker regitry URL, e.g. `harbor.avataa.dev`
+- `REGISTRY_URL` - Docker regitry URL, e.g. `harbor.domain.com`
 - `PLATFORM_PROJECT_NAME` - Docker regitry project Docker image can be downloaded from, e.g. `avataa`
 
 # Run command
@@ -95,7 +95,7 @@ V3_DB_USER=<pgbouncer/postgres_dataflow_user>
 > Note: if running without `alembic upgrade head` MS will start with empty sources
 
 # For develop
-1. **DO NOT** track env.py file (create new change list) 
+1. **DO NOT** track env.py file (create new change list)
 2. If running with PyCharm change ``env.py`` file
     - 49 line - replace DATABASE_URL with your URL
     - 76 line - replace DATABASE_URL with your URL
