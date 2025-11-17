@@ -103,6 +103,9 @@ V3_DB_USER=<pgbouncer/postgres_dataflow_user>
 
 # Tests
 Just run command in terminal: `pytest`
+
+
+
 Export Compliance
 
 This Software, including any source code, technology, and technical data, is distributed under the Apache License, Version 2.0.
